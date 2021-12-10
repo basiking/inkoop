@@ -49,7 +49,7 @@ function pwdMatch($password, $passwordRepeat){
 
 //Checks if the username and email already exist in the database
 function gebruikersnaamExists($conn, $gebruikersnaam, $email){
-    $sql = "SELECT * FROM users WHERE username = ? OR email = ?;";
+    $sql = "SELECT * FROM gebruiker WHERE Gebruikersnaam = ? OR Email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../registreren.php?error=stmtfailed");
@@ -74,7 +74,7 @@ function gebruikersnaamExists($conn, $gebruikersnaam, $email){
 
 //Function for creating an user
 function createUser($conn, $gebruikersnaam, $email, $password){
-    $sql = "INSERT INTO users (username, password, email) VALUES (?,?,?);";
+    $sql = "INSERT INTO gebruiker (Gebruikersnaam, Wachtwoord, Email) VALUES (?,?,?);";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)){
         header("location: ../registreren.php?error=stmtfailed");
@@ -112,7 +112,7 @@ function loginUser($conn, $gebruikersnaam, $password){
         exit();
     }
 
-    $pwdHashed = $gebruikerExists["password"];
+    $pwdHashed = $gebruikerExists["Wachtwoord"];
     $checkPassword = password_verify($password, $pwdHashed);
 
     if ($checkPassword === false){
@@ -121,11 +121,12 @@ function loginUser($conn, $gebruikersnaam, $password){
     }
     else if ($checkPassword === true){
         session_start();
-        $_SESSION["userID"] = $gebruikerExists["userID"];
-        $_SESSION["username"] = $gebruikerExists["username"];
-        $_SESSION["email"] = $gebruikerExists["email"];
-        $_SESSION["creationDate"] = $gebruikerExists["creationDate"];
-        header("location: ../home.php");
+        $_SESSION["userID"] = $gebruikerExists["GebruikerID"];
+        $_SESSION["username"] = $gebruikerExists["Gebruikersnaam"];
+        $_SESSION["email"] = $gebruikerExists["Email"];
+        $_SESSION["creationDate"] = $gebruikerExists["aanmaakDatum"];
+        $_SESSION["adminstatus"] = $gebruikerExists["isAdmin"];
+        header("location: ../index.php?error=sheesh");
         exit();
     }
 }

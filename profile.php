@@ -1,4 +1,4 @@
-<?php
+<?php     $title = "Profiel";
 include 'includes/head.inc.php';
 ?>
 

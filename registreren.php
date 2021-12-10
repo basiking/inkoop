@@ -1,4 +1,4 @@
-<?php 
+<?php $title = "Registreren";
 include "includes/db_connection.php";
 include "includes/head.inc.php";
 ?>

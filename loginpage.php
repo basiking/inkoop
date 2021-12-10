@@ -1,9 +1,10 @@
-<?php 
+<?php $title = "Login";
 include "includes/db_connection.php";
 include "includes/head.inc.php";
 ?>
 
         
+<div class='container-fluid col-md-4 col-md-offset-4 center_div'>
 <h3>Loginpagina</h3>
 <form action="includes/login.inc.php" method="post">
     <div class="form-group">

@@ -8,17 +8,8 @@ if (isset($_POST["submit"])){
     $password = $_POST["password"];
     $passwordRepeat = $_POST["passwordRepeat"];
     
-    $dbhost = "localhost";
-        $dbuser = "test";
-        $dbpass = "test";
-        $db = "pharmacy";
 
-        $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $db);
-        if (!$conn) {
-            die("Connection failed: " . mysqli_connect_error());
-        }
-
-    //require_once 'db_connection.php';
+    require_once 'db_connection.php';
     require_once "./functies.inc.php";
     
     //Functions from functies.inc.php

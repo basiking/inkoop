@@ -1,14 +1,13 @@
-<?php
-$servername = "localhost";
-$username = "test";
-$password = "test";
-$dbname = "inkoopsysteem";
+<?php 
+        //database info
+        $dbhost = "localhost";
+        $dbuser = "test";
+        $dbpass = "test";
+        $db = "inkoopsysteem";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-//echo 'connected to database';
+        //database connection 
+        $conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
+?>
