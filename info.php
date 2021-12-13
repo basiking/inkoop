@@ -25,7 +25,7 @@ if($_SESSION['adminstatus'] == "1"){
 
             if ($result2->num_rows > 0){
                 while($row2 = $result2->fetch_assoc()){
-                    echo "Datum aangemaakt: " . $row2["datum"] . "<br>";
+                    echo "Datum aangemaakt: " . date('d-m-y', strtotime($row2["datum"])) . "<br>";
                 }
             }
 
@@ -53,7 +53,7 @@ if($_SESSION['adminstatus'] == "1"){
                  ."<td>" . $row['46'] . "</td>"
                  ."<td>" . $row['48'] . "</td>"
                  ."<td>" . $row['50'] . "</td>"
-                 ."<td>" . ($row['isNieuw'] ? 'ja' : 'nee') . "</td>"
+                 ."<td>" . ($row['isNieuw'] ? '<b>ja</b>' : 'nee') . "</td>"
                  ."<td>" . date('d/m/y', $date) . "</td>"
                  ."<td>" . $row['Extra'] . "</td>"
                  . "</tr>";
