@@ -128,7 +128,7 @@ tr:nth-child(even) {
     .noPrint { display: none; }
 } 
 
-/* .tabel{
-  font-size: 20px;
-} */
+.tabel{
+  font-size: 18px;
+} 
 
