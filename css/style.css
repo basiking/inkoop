@@ -60,6 +60,12 @@
  line-height: 3em;
 }
 
+.forminput{
+  width: 100%;
+}@media print {
+  .noPrint { display: none; }
+} 
+
 table {
  border-collapse: collapse;
  border-spacing: 0;

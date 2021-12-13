@@ -31,6 +31,7 @@ include "includes/head.inc.php";
     </form>
 
     <?php
+    //error warnings
   if(isset($_GET["error"])){
     if ($_GET["error"] == "emptyInput"){
       echo "<p>Vul alles in aub.</p>";
