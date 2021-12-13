@@ -7,7 +7,7 @@
 <h1>Inkoopformulier</h1>
     <?php
      $date = new DateTime('now', new DateTimeZone('Europe/Amsterdam'));
-     echo "Het is nu: " . $date->format('d-m-Y H:i:s');
+     echo "Het is nu: " . $date->format('d-m-Y H:i:s') . "<br>";
 
         //Login messages
         if(isset($_GET["error"])){

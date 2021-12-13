@@ -127,3 +127,8 @@ tr:nth-child(even) {
 @media print {
     .noPrint { display: none; }
 } 
+
+/* .tabel{
+  font-size: 20px;
+} */
+
