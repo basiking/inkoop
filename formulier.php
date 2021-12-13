@@ -14,7 +14,7 @@ if($_SESSION['adminstatus'] == "1"){
         echo "Admin status: ja";
         echo "<h2>Ingevulde lijsten</h2>";
 
-        $sql = "SELECT * FROM inkoop";
+        $sql = "SELECT * FROM inkoop ORDER BY datum DESC;";
         $result = mysqli_query($conn, $sql) or die ("Bad Query: $sql");
         
         if(mysqli_num_rows($result) > 0){

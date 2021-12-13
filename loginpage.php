@@ -25,6 +25,7 @@ include "includes/head.inc.php";
 
     <?php
   if(isset($_GET["error"])){
+    //error messages
     if ($_GET["error"] == "emptyInput"){
       echo "<p>Vul alles in aub.</p>";
     }

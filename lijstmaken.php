@@ -5,6 +5,7 @@
 
 if($_SESSION['adminstatus'] == "1"){
     $admin = true;
+    //only shows content if user is admin
     }
     else{
         header("location: ../inkoop/index.php?error=notallowed");
@@ -22,7 +23,7 @@ if($_SESSION['adminstatus'] == "1"){
     }
 ?>
 <form action="../inkoop/includes/nieuwelijst.inc.php" method="post">
-                <input type="text" name="aantaldozen" class="inputlogin" placeholder="Aantal dozen: "><br>
+                <input type="text" name="aantaldozen" class="inputlogin" required placeholder="Aantal dozen: "><br>
                 <input type="text" name="factuurnummer" class="inputlogin" placeholder="Factuurnummer: "><br>
                 <button type="submit" name="submit">Aanmaken</button><br>
             </form>

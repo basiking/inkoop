@@ -10,7 +10,7 @@ require_once 'functies.inc.php';
 $sql = "INSERT INTO inkoop (aantalDozen, factuurNummer)
         VALUES ($aantaldozen, $factuurnummer)";
         if (mysqli_query($conn, $sql)){
-            header("location: ../lijstmaken.php?error=succesaangemaakt");
+            header("location: ../formulier.php?error=succesaangemaakt");
             exit();
         } else{
             echo "Error: " . $sql . " " . mysqli_error($conn);

@@ -68,7 +68,7 @@ if($_SESSION['adminstatus'] == "1"){
             "<td><input type='text' class = 'forminput noPrint' name = 'kleur' placeholder='kleur' required></td>".
             "<td><input type='text' class = 'forminput noPrint' name = 'merk' placeholder='merk' required></td>".
             "<td><input type='text' class = 'forminput noPrint' name = 'artikelnummer' placeholder='artikelnummer'></td>".
-            "<td><input type='text' class = 'forminput noPrint' name = 'xs' placeholder='s'></td>".
+            "<td><input type='text' class = 'forminput noPrint' name = 'xs' placeholder='xs'></td>".
             "<td><input type='text' class = 'forminput noPrint' name = 's' placeholder='s'></td>".
             "<td><input type='text' class = 'forminput noPrint' name = 'm' placeholder='m'></td>".
             "<td><input type='text' class = 'forminput noPrint' name = 'l' placeholder='l'></td>".

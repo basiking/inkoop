@@ -10,6 +10,7 @@ if (!isset($_SESSION['userID'])){
 }
 
 if (isset($_SESSION['userID'])){
+    //shows user info
     echo "<p>Gebruikersnaam: ".  $_SESSION['username'] . "<br>";
     echo "ID: " . $_SESSION['userID'] . "<br>";
     echo "Datum van registratie: " . $_SESSION['creationDate'] . "<br>";
