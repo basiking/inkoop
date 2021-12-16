@@ -34,7 +34,7 @@ if($_SESSION['adminstatus'] == "1"){
             echo "<div style='overflow-x:auto;''>";
             echo "<table class = 'tabel'>";
             echo "<tr> 
-            <th>Type</th> <th>Kleur</th> <th>Merk</th> <th>Art:Num</th><th>XS</th> <th>S</th> <th>M</th> <th>L</th> <th>XL</th> <th>XXL</th> <th>44</th> <th>46</th> <th>48</th> <th>50</th> <th>Nieuw?</th> <th>Datum</th><th>extra</th> 
+            <th>Type</th> <th>Kleur</th> <th>Merk</th> <th>Art:Num</th><th>XS</th> <th>S</th> <th>M</th> <th>L</th> <th>XL</th> <th>XXL</th> <th>44</th> <th>46</th> <th>48</th> <th>50</th> <th>Nieuw?</th> <th>Datum</th><th>extra</th> <th class = 'noPrint'>Aanpassen</th>
             </tr>";
             while($row = mysqli_fetch_array($result)){
                 $date = strtotime($row['Datum']);
@@ -56,6 +56,7 @@ if($_SESSION['adminstatus'] == "1"){
                  ."<td>" . ($row['isNieuw'] ? '<b>ja</b>' : 'nee') . "</td>"
                  ."<td>" . date('d/m/y', $date) . "</td>"
                  ."<td>" . $row['Extra'] . "</td>"
+                 ."<td class = 'noPrint'><a href='rijaanpassen.php?InkooprijID=" . $row['ID'] . "'<button>Aanpassen</button></a></td>"
                  . "</tr>";
                 //echo "Datum: " . date('d/m/y', $date) . "<br>";
             }
@@ -98,5 +99,10 @@ if($_SESSION['adminstatus'] == "1"){
 ?>
 
 <button class = "printer noPrint" onclick="window.print(); return false;">Print</button>
-
-<?php include_once 'includes/footer.php';?>
+<?php 
+if(isset($_GET["Rij"])){
+            if ($_GET["Rij"] == "Aangepast"){
+              echo "<p class = 'noPrint'>Rij is succesvol aangepast.</p>";
+            }
+        }
+include_once 'includes/footer.php';?>

@@ -11,7 +11,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../inkoop/css/style.css">
-    <?php require 'includes/db_connection.php'; ?>
+    <?php require 'db_connection.php'; ?>
     <title><?php echo $title; ?></title>
 
 </head>
