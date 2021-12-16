@@ -11,6 +11,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../inkoop/css/style.css">
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <?php require 'db_connection.php'; ?>
     <title><?php echo $title; ?></title>
 

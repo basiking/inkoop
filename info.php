@@ -32,7 +32,7 @@ if($_SESSION['adminstatus'] == "1"){
             $sql = "SELECT * FROM inkooprij WHERE inkoopID = '$ID' ";
             $result = mysqli_query($conn, $sql) or die("Bad Query: $sql");
             echo "<div style='overflow-x:auto;''>";
-            echo "<table class = 'tabel'>";
+            echo "<table class = 'tabel sortable'>";
             echo "<tr> 
             <th>Type</th> <th>Kleur</th> <th>Merk</th> <th>Art:Num</th><th>XS</th> <th>S</th> <th>M</th> <th>L</th> <th>XL</th> <th>XXL</th> <th>44</th> <th>46</th> <th>48</th> <th>50</th> <th>Nieuw?</th> <th>Datum</th><th>extra</th> <th class = 'noPrint'>Aanpassen</th>
             </tr>";
