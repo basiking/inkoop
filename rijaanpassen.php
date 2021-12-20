@@ -17,13 +17,13 @@ if($_SESSION['adminstatus'] == "1"){
                 </form>
             <?php
 
-            echo $_SERVER["PHP_SELF"] . "?InkooprijID=$ID";
+            
 
             $sql = "SELECT * FROM inkooprij WHERE ID = '$ID' ";
             $result = mysqli_query($conn, $sql) or die("Bad Query: $sql");
             echo "<div style='overflow-x:auto;''>";
             ?>
-            <table class = 'tabel'>"
+            <table class = 'tabel'>
             <tr> 
             <th>Type</th> <th>Kleur</th> <th>Merk</th> <th>Art:Num</th><th>XS</th> <th>S</th> <th>M</th> <th>L</th> <th>XL</th> <th>XXL</th><th>44</th> <th>46</th> <th>48</th> <th>50</th> <th>Nieuw?</th> <th>Datum</th><th>extra</th>
             </tr>
@@ -33,29 +33,29 @@ if($_SESSION['adminstatus'] == "1"){
                 ?>
             <form action = "includes/aangepast.php" method="post">
                 <tr>
-                <td><input type = "text" name = "productType" value = "<?php echo $row['productType']; ?>"></td>
-                <td><input type = "text" name = "kleur" value = "<?php echo $row['kleur']; ?>"></td>
-                <td><input type = "text" name = "merk" value = "<?php echo $row['merk']; ?>"></td>
-                <td><input type = "text" name = "artikelnummer" value = "<?php echo $row['artikelnummer']; ?>"></td>
-                <td><input type = "text" name = "xs" value = "<?php echo $row['XS']; ?>"></td>
-                <td><input type = "text" name = "s" value = "<?php echo $row['S']; ?>"></td>
-                <td><input type = "text" name = "m" value = "<?php echo $row['M']; ?>"></td>
-                <td><input type = "text" name = "l" value = "<?php echo $row['L']; ?>"></td>
-                <td><input type = "text" name = "xl" value = "<?php echo $row['XL']; ?>"></td>
-                <td><input type = "text" name = "xxl" value = "<?php echo $row['XXL']; ?>"></td>
-                <td><input type = "text" name = "44" value = "<?php echo $row['44']; ?>"></td>
-                <td><input type = "text" name = "46" value = "<?php echo $row['46']; ?>"></td>
-                <td><input type = "text" name = "48" value = "<?php echo $row['48']; ?>"></td>
-                <td><input type = "text" name = "50" value = "<?php echo $row['50']; ?>"></td>
-                <td><select name = "isNieuw">
+                <td><input class = "forminput" type = "text" name = "productType" value = "<?php echo $row['productType']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "kleur" value = "<?php echo $row['kleur']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "merk" value = "<?php echo $row['merk']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "artikelnummer" value = "<?php echo $row['artikelnummer']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "xs" value = "<?php echo $row['XS']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "s" value = "<?php echo $row['S']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "m" value = "<?php echo $row['M']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "l" value = "<?php echo $row['L']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "xl" value = "<?php echo $row['XL']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "xxl" value = "<?php echo $row['XXL']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "44" value = "<?php echo $row['44']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "46" value = "<?php echo $row['46']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "48" value = "<?php echo $row['48']; ?>"></td>
+                <td><input class = "forminput" type = "text" name = "50" value = "<?php echo $row['50']; ?>"></td>
+                <td><select class = "forminput" name = "isNieuw">
                 <option value = '1'>Ja</option>    
                 <option value = '0' <?php if (!$row['isNieuw']){echo "selected";} ?>>Nee</option>
                 </select></td>
                 <td><input name = "datum" type = "text" readonly value = "<?php echo date('d/m/y', $date); ?>"></td>
                 <td><input name = "extra" type = "text" value = "<?php echo $row['Extra'];?>"></td>
                 </tr>
-                <input type = "hidden" name = "inkoopID" value = "<?php echo $row['inkoopID']; ?>">
-                <input type = "hidden" name = "inkooprijID" value = "<?php echo $ID;?>">
+                <input class = "forminput" type = "hidden" name = "inkoopID" value = "<?php echo $row['inkoopID']; ?>">
+                <input class = "forminput" type = "hidden" name = "inkooprijID" value = "<?php echo $ID;?>">
                 <tr><td><input type="submit" value="Aanpassen"></td></tr>
             </form>
                 <?php
