@@ -13,6 +13,12 @@ if($_SESSION['adminstatus'] == "1"){
     if ($admin){
         echo "Admin status: ja";
         echo "<h2>Ingevulde lijsten</h2>";
+        //Login messages
+        if(isset($_GET["error"])){
+            if ($_GET["error"] == "succesaangemaakt"){
+              echo "<p>U heeft succesvol een nieuwe lijst aangemaakt.</p>";
+            }
+        }
 
         $sql = "SELECT * FROM inkoop ORDER BY datum DESC";
         $result = mysqli_query($conn, $sql) or die ("Bad Query: $sql");

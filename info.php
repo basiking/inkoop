@@ -93,7 +93,6 @@ if($_SESSION['adminstatus'] == "1"){
             echo "</table>";
             echo "</div>";
             mysqli_close($conn);
-
         }
     }
 ?>
