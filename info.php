@@ -97,7 +97,7 @@ if($_SESSION['adminstatus'] == "1"){
     }
 ?>
 
-<button class = "printer noPrint" onclick="window.print(); return false;">Print</button>
+<button id= "onderkant" class = "printer noPrint" onclick="window.print(); return false;">Print</button>
 <?php 
 if(isset($_GET["Rij"])){
             if ($_GET["Rij"] == "Aangepast"){

@@ -32,7 +32,7 @@ $sql = "INSERT INTO inkooprij (GebruikerID, XS, S, M, L, XL, XXL, `44`, `46`, `4
 if($query = $conn->prepare($sql)){
     $query->bind_param("iiiiiiiiiiiisissss", $gebruikerID, $XS, $S, $M , $L ,$XL, $XXL, $M44, $M46, $M48, $M50, $nieuw, $extra, $inkoopID, $productType, $kleur, $merk, $artikelnummer);
     $query->execute();
-    header("location: ../inkoop/info.php?ID=$inkoopID");
+    header("location: ../inkoop/info.php?ID=$inkoopID#onderkant");
     exit();
 }else{
     $error = $conn->errno . ' ' . $conn->error;
